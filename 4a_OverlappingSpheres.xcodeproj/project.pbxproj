@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC431D582B801A1B00614D86 /* _a_OverlappingSpheresApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC431D572B801A1B00614D86 /* _a_OverlappingSpheresApp.swift */; };
+		AC431D5A2B801A1B00614D86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC431D592B801A1B00614D86 /* ContentView.swift */; };
+		AC431D5C2B801A1C00614D86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC431D5B2B801A1C00614D86 /* Assets.xcassets */; };
+		AC431D602B801A1C00614D86 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC431D5F2B801A1C00614D86 /* Preview Assets.xcassets */; };
+		AC431D6A2B801A1C00614D86 /* _a_OverlappingSpheresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC431D692B801A1C00614D86 /* _a_OverlappingSpheresTests.swift */; };
+		AC431D742B801A1C00614D86 /* _a_OverlappingSpheresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC431D732B801A1C00614D86 /* _a_OverlappingSpheresUITests.swift */; };
+		AC431D762B801A1C00614D86 /* _a_OverlappingSpheresUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC431D752B801A1C00614D86 /* _a_OverlappingSpheresUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC431D662B801A1C00614D86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC431D4C2B801A1B00614D86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC431D532B801A1B00614D86;
+			remoteInfo = 4a_OverlappingSpheres;
+		};
+		AC431D702B801A1C00614D86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC431D4C2B801A1B00614D86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC431D532B801A1B00614D86;
+			remoteInfo = 4a_OverlappingSpheres;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AC431D542B801A1B00614D86 /* 4a_OverlappingSpheres.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 4a_OverlappingSpheres.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC431D572B801A1B00614D86 /* _a_OverlappingSpheresApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _a_OverlappingSpheresApp.swift; sourceTree = "<group>"; };
+		AC431D592B801A1B00614D86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AC431D5B2B801A1C00614D86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC431D5D2B801A1C00614D86 /* _a_OverlappingSpheres.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = _a_OverlappingSpheres.entitlements; sourceTree = "<group>"; };
+		AC431D5F2B801A1C00614D86 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AC431D652B801A1C00614D86 /* 4a_OverlappingSpheresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 4a_OverlappingSpheresTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC431D692B801A1C00614D86 /* _a_OverlappingSpheresTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _a_OverlappingSpheresTests.swift; sourceTree = "<group>"; };
+		AC431D6F2B801A1C00614D86 /* 4a_OverlappingSpheresUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 4a_OverlappingSpheresUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC431D732B801A1C00614D86 /* _a_OverlappingSpheresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _a_OverlappingSpheresUITests.swift; sourceTree = "<group>"; };
+		AC431D752B801A1C00614D86 /* _a_OverlappingSpheresUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _a_OverlappingSpheresUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC431D512B801A1B00614D86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC431D622B801A1C00614D86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC431D6C2B801A1C00614D86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC431D4B2B801A1B00614D86 = {
+			isa = PBXGroup;
+			children = (
+				AC431D562B801A1B00614D86 /* 4a_OverlappingSpheres */,
+				AC431D682B801A1C00614D86 /* 4a_OverlappingSpheresTests */,
+				AC431D722B801A1C00614D86 /* 4a_OverlappingSpheresUITests */,
+				AC431D552B801A1B00614D86 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC431D552B801A1B00614D86 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC431D542B801A1B00614D86 /* 4a_OverlappingSpheres.app */,
+				AC431D652B801A1C00614D86 /* 4a_OverlappingSpheresTests.xctest */,
+				AC431D6F2B801A1C00614D86 /* 4a_OverlappingSpheresUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC431D562B801A1B00614D86 /* 4a_OverlappingSpheres */ = {
+			isa = PBXGroup;
+			children = (
+				AC431D572B801A1B00614D86 /* _a_OverlappingSpheresApp.swift */,
+				AC431D592B801A1B00614D86 /* ContentView.swift */,
+				AC431D5B2B801A1C00614D86 /* Assets.xcassets */,
+				AC431D5D2B801A1C00614D86 /* _a_OverlappingSpheres.entitlements */,
+				AC431D5E2B801A1C00614D86 /* Preview Content */,
+			);
+			path = 4a_OverlappingSpheres;
+			sourceTree = "<group>";
+		};
+		AC431D5E2B801A1C00614D86 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AC431D5F2B801A1C00614D86 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AC431D682B801A1C00614D86 /* 4a_OverlappingSpheresTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC431D692B801A1C00614D86 /* _a_OverlappingSpheresTests.swift */,
+			);
+			path = 4a_OverlappingSpheresTests;
+			sourceTree = "<group>";
+		};
+		AC431D722B801A1C00614D86 /* 4a_OverlappingSpheresUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AC431D732B801A1C00614D86 /* _a_OverlappingSpheresUITests.swift */,
+				AC431D752B801A1C00614D86 /* _a_OverlappingSpheresUITestsLaunchTests.swift */,
+			);
+			path = 4a_OverlappingSpheresUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC431D532B801A1B00614D86 /* 4a_OverlappingSpheres */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC431D792B801A1C00614D86 /* Build configuration list for PBXNativeTarget "4a_OverlappingSpheres" */;
+			buildPhases = (
+				AC431D502B801A1B00614D86 /* Sources */,
+				AC431D512B801A1B00614D86 /* Frameworks */,
+				AC431D522B801A1B00614D86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = 4a_OverlappingSpheres;
+			productName = 4a_OverlappingSpheres;
+			productReference = AC431D542B801A1B00614D86 /* 4a_OverlappingSpheres.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AC431D642B801A1C00614D86 /* 4a_OverlappingSpheresTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC431D7C2B801A1C00614D86 /* Build configuration list for PBXNativeTarget "4a_OverlappingSpheresTests" */;
+			buildPhases = (
+				AC431D612B801A1C00614D86 /* Sources */,
+				AC431D622B801A1C00614D86 /* Frameworks */,
+				AC431D632B801A1C00614D86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC431D672B801A1C00614D86 /* PBXTargetDependency */,
+			);
+			name = 4a_OverlappingSpheresTests;
+			productName = 4a_OverlappingSpheresTests;
+			productReference = AC431D652B801A1C00614D86 /* 4a_OverlappingSpheresTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AC431D6E2B801A1C00614D86 /* 4a_OverlappingSpheresUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC431D7F2B801A1C00614D86 /* Build configuration list for PBXNativeTarget "4a_OverlappingSpheresUITests" */;
+			buildPhases = (
+				AC431D6B2B801A1C00614D86 /* Sources */,
+				AC431D6C2B801A1C00614D86 /* Frameworks */,
+				AC431D6D2B801A1C00614D86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC431D712B801A1C00614D86 /* PBXTargetDependency */,
+			);
+			name = 4a_OverlappingSpheresUITests;
+			productName = 4a_OverlappingSpheresUITests;
+			productReference = AC431D6F2B801A1C00614D86 /* 4a_OverlappingSpheresUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC431D4C2B801A1B00614D86 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					AC431D532B801A1B00614D86 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					AC431D642B801A1C00614D86 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = AC431D532B801A1B00614D86;
+					};
+					AC431D6E2B801A1C00614D86 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = AC431D532B801A1B00614D86;
+					};
+				};
+			};
+			buildConfigurationList = AC431D4F2B801A1B00614D86 /* Build configuration list for PBXProject "4a_OverlappingSpheres" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC431D4B2B801A1B00614D86;
+			productRefGroup = AC431D552B801A1B00614D86 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC431D532B801A1B00614D86 /* 4a_OverlappingSpheres */,
+				AC431D642B801A1C00614D86 /* 4a_OverlappingSpheresTests */,
+				AC431D6E2B801A1C00614D86 /* 4a_OverlappingSpheresUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC431D522B801A1B00614D86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC431D602B801A1C00614D86 /* Preview Assets.xcassets in Resources */,
+				AC431D5C2B801A1C00614D86 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC431D632B801A1C00614D86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC431D6D2B801A1C00614D86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC431D502B801A1B00614D86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC431D5A2B801A1B00614D86 /* ContentView.swift in Sources */,
+				AC431D582B801A1B00614D86 /* _a_OverlappingSpheresApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC431D612B801A1C00614D86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC431D6A2B801A1C00614D86 /* _a_OverlappingSpheresTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC431D6B2B801A1C00614D86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC431D742B801A1C00614D86 /* _a_OverlappingSpheresUITests.swift in Sources */,
+				AC431D762B801A1C00614D86 /* _a_OverlappingSpheresUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC431D672B801A1C00614D86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC431D532B801A1B00614D86 /* 4a_OverlappingSpheres */;
+			targetProxy = AC431D662B801A1C00614D86 /* PBXContainerItemProxy */;
+		};
+		AC431D712B801A1C00614D86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC431D532B801A1B00614D86 /* 4a_OverlappingSpheres */;
+			targetProxy = AC431D702B801A1C00614D86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AC431D772B801A1C00614D86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC431D782B801A1C00614D86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		AC431D7A2B801A1C00614D86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = 4a_OverlappingSpheres/_a_OverlappingSpheres.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"4a_OverlappingSpheres/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rosiles.iit.phys440.-a-OverlappingSpheres";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC431D7B2B801A1C00614D86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = 4a_OverlappingSpheres/_a_OverlappingSpheres.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"4a_OverlappingSpheres/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rosiles.iit.phys440.-a-OverlappingSpheres";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AC431D7D2B801A1C00614D86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rosiles.iit.phys440.-a-OverlappingSpheresTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/4a_OverlappingSpheres.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/4a_OverlappingSpheres";
+			};
+			name = Debug;
+		};
+		AC431D7E2B801A1C00614D86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rosiles.iit.phys440.-a-OverlappingSpheresTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/4a_OverlappingSpheres.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/4a_OverlappingSpheres";
+			};
+			name = Release;
+		};
+		AC431D802B801A1C00614D86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rosiles.iit.phys440.-a-OverlappingSpheresUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = 4a_OverlappingSpheres;
+			};
+			name = Debug;
+		};
+		AC431D812B801A1C00614D86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rosiles.iit.phys440.-a-OverlappingSpheresUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = 4a_OverlappingSpheres;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC431D4F2B801A1B00614D86 /* Build configuration list for PBXProject "4a_OverlappingSpheres" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC431D772B801A1C00614D86 /* Debug */,
+				AC431D782B801A1C00614D86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC431D792B801A1C00614D86 /* Build configuration list for PBXNativeTarget "4a_OverlappingSpheres" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC431D7A2B801A1C00614D86 /* Debug */,
+				AC431D7B2B801A1C00614D86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC431D7C2B801A1C00614D86 /* Build configuration list for PBXNativeTarget "4a_OverlappingSpheresTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC431D7D2B801A1C00614D86 /* Debug */,
+				AC431D7E2B801A1C00614D86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC431D7F2B801A1C00614D86 /* Build configuration list for PBXNativeTarget "4a_OverlappingSpheresUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC431D802B801A1C00614D86 /* Debug */,
+				AC431D812B801A1C00614D86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC431D4C2B801A1B00614D86 /* Project object */;
+}
