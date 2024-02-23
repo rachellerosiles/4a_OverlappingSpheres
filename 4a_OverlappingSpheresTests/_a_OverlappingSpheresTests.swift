@@ -6,6 +6,8 @@
 //
 
 import XCTest
+import Foundation
+import SwiftUI
 
 final class _a_OverlappingSpheresTests: XCTestCase {
 
@@ -30,6 +32,16 @@ final class _a_OverlappingSpheresTests: XCTestCase {
         measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testCartesianToSpherical() async {
+        let model = MonteCarlo()
+        
+        let sphere = await MonteCarlo().cartesianToSpherical(x: 1.0, y: 1.0, z: 1.0, xOffSet: 0.0, yOffSet: 0.0, zOffSet: 0.0)
+        
+        XCTAssertEqual(sphere.r, 1.0, accuracy: 1.0E-7, "Was not equal to this resolution.")
+        XCTAssertEqual(sphere.theta, 45.0, accuracy: 1.0E-7, "Was not equal to this resolution.")
+        
     }
 
 }

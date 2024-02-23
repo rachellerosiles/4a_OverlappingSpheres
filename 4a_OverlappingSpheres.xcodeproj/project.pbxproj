@@ -14,9 +14,9 @@
 		AC431D6A2B801A1C00614D86 /* _a_OverlappingSpheresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC431D692B801A1C00614D86 /* _a_OverlappingSpheresTests.swift */; };
 		AC431D742B801A1C00614D86 /* _a_OverlappingSpheresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC431D732B801A1C00614D86 /* _a_OverlappingSpheresUITests.swift */; };
 		AC431D762B801A1C00614D86 /* _a_OverlappingSpheresUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC431D752B801A1C00614D86 /* _a_OverlappingSpheresUITestsLaunchTests.swift */; };
-		AC431D832B801A3F00614D86 /* Monte Carlo Integral.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC431D822B801A3F00614D86 /* Monte Carlo Integral.swift */; };
-		AC431D842B801A3F00614D86 /* Monte Carlo Integral.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC431D822B801A3F00614D86 /* Monte Carlo Integral.swift */; };
-		AC431D852B801A3F00614D86 /* Monte Carlo Integral.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC431D822B801A3F00614D86 /* Monte Carlo Integral.swift */; };
+		AC91B99F2B8418C900923AE8 /* Monte Carlo Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC91B99E2B8418C900923AE8 /* Monte Carlo Calculator.swift */; };
+		AC91B9A02B8418C900923AE8 /* Monte Carlo Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC91B99E2B8418C900923AE8 /* Monte Carlo Calculator.swift */; };
+		AC91B9A12B8418C900923AE8 /* Monte Carlo Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC91B99E2B8418C900923AE8 /* Monte Carlo Calculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		AC431D6F2B801A1C00614D86 /* 4a_OverlappingSpheresUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 4a_OverlappingSpheresUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC431D732B801A1C00614D86 /* _a_OverlappingSpheresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _a_OverlappingSpheresUITests.swift; sourceTree = "<group>"; };
 		AC431D752B801A1C00614D86 /* _a_OverlappingSpheresUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _a_OverlappingSpheresUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		AC431D822B801A3F00614D86 /* Monte Carlo Integral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Monte Carlo Integral.swift"; sourceTree = "<group>"; };
+		AC91B99E2B8418C900923AE8 /* Monte Carlo Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Monte Carlo Calculator.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +101,10 @@
 			children = (
 				AC431D572B801A1B00614D86 /* _a_OverlappingSpheresApp.swift */,
 				AC431D592B801A1B00614D86 /* ContentView.swift */,
+				AC91B99E2B8418C900923AE8 /* Monte Carlo Calculator.swift */,
 				AC431D5B2B801A1C00614D86 /* Assets.xcassets */,
 				AC431D5D2B801A1C00614D86 /* _a_OverlappingSpheres.entitlements */,
 				AC431D5E2B801A1C00614D86 /* Preview Content */,
-				AC431D822B801A3F00614D86 /* Monte Carlo Integral.swift */,
 			);
 			path = 4a_OverlappingSpheres;
 			sourceTree = "<group>";
@@ -265,7 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC431D5A2B801A1B00614D86 /* ContentView.swift in Sources */,
-				AC431D832B801A3F00614D86 /* Monte Carlo Integral.swift in Sources */,
+				AC91B99F2B8418C900923AE8 /* Monte Carlo Calculator.swift in Sources */,
 				AC431D582B801A1B00614D86 /* _a_OverlappingSpheresApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,7 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC431D6A2B801A1C00614D86 /* _a_OverlappingSpheresTests.swift in Sources */,
-				AC431D842B801A3F00614D86 /* Monte Carlo Integral.swift in Sources */,
+				AC91B9A02B8418C900923AE8 /* Monte Carlo Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC431D742B801A1C00614D86 /* _a_OverlappingSpheresUITests.swift in Sources */,
-				AC431D852B801A3F00614D86 /* Monte Carlo Integral.swift in Sources */,
+				AC91B9A12B8418C900923AE8 /* Monte Carlo Calculator.swift in Sources */,
 				AC431D762B801A1C00614D86 /* _a_OverlappingSpheresUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
