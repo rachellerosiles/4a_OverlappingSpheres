@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63A5A9CC2B89073700990010 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A5A9CB2B89073700990010 /* BoundingBox.swift */; };
 		AC431D582B801A1B00614D86 /* _a_OverlappingSpheresApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC431D572B801A1B00614D86 /* _a_OverlappingSpheresApp.swift */; };
 		AC431D5A2B801A1B00614D86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC431D592B801A1B00614D86 /* ContentView.swift */; };
 		AC431D5C2B801A1C00614D86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC431D5B2B801A1C00614D86 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		63A5A9CB2B89073700990010 /* BoundingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
 		AC431D542B801A1B00614D86 /* 4a_OverlappingSpheres.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 4a_OverlappingSpheres.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC431D572B801A1B00614D86 /* _a_OverlappingSpheresApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _a_OverlappingSpheresApp.swift; sourceTree = "<group>"; };
 		AC431D592B801A1B00614D86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		AC431D4B2B801A1B00614D86 = {
 			isa = PBXGroup;
 			children = (
+				63A5A9CB2B89073700990010 /* BoundingBox.swift */,
 				AC431D562B801A1B00614D86 /* 4a_OverlappingSpheres */,
 				AC431D682B801A1C00614D86 /* 4a_OverlappingSpheresTests */,
 				AC431D722B801A1C00614D86 /* 4a_OverlappingSpheresUITests */,
@@ -267,6 +270,7 @@
 				AC431D5A2B801A1B00614D86 /* ContentView.swift in Sources */,
 				AC91B99F2B8418C900923AE8 /* Monte Carlo Calculator.swift in Sources */,
 				AC431D582B801A1B00614D86 /* _a_OverlappingSpheresApp.swift in Sources */,
+				63A5A9CC2B89073700990010 /* BoundingBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

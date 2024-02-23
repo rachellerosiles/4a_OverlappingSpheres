@@ -37,10 +37,11 @@ final class _a_OverlappingSpheresTests: XCTestCase {
     func testCartesianToSpherical() async {
         let model = MonteCarlo()
         
-        let sphere = await MonteCarlo().cartesianToSpherical(x: 1.0, y: 1.0, z: 1.0, xOffSet: 0.0, yOffSet: 0.0, zOffSet: 0.0)
+        let sphere = await MonteCarlo().cartesianToSpherical(x: 5.0, y: -7.0, z: 7.0, xOffSet: 0.0, yOffSet: 0.0, zOffSet: 0.0)
         
-        XCTAssertEqual(sphere.r, 1.0, accuracy: 1.0E-7, "Was not equal to this resolution.")
-        XCTAssertEqual(sphere.theta, 45.0, accuracy: 1.0E-7, "Was not equal to this resolution.")
+        XCTAssertEqual(sphere.r, 11.090536506409418, accuracy: 1.0E-4, "Was not equal to this resolution.")
+        XCTAssertEqual(sphere.theta, 0.8877372352984988, accuracy: 1.0E-4, "Was not equal to this resolution.")
+        XCTAssertEqual(sphere.phi, -0.9505, accuracy: 1.0E-4, "Was not equal to this resolution.")
         
     }
 
