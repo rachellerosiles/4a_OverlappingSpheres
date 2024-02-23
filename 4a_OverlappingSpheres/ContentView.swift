@@ -15,22 +15,98 @@ struct ContentView: View {
     @State var totalIntegral = 0.0
     @State var calcIntegral = 0.0
     @State var radius = 1.0
+    @State var x1Value = 0.0
+    @State var x2Value = 0.0
+    @State var y1Value = 0.0
+    @State var y2Value = 0.0
+    @State var z1Value = 0.0
+    @State var z2Value = 0.0
+    
+    
     @State var calcIntegralString = "0.0"
     @State var integralString = "0.0"
     @State var guessString = "23458"
     @State var totalGuessString = "0"
+    @State var x1String = "0.0"
+    @State var x2String = "0.0"
+    @State var y1String = "0.0"
+    @State var y2String = "0.0"
+    @State var z1String = "0.0"
+    @State var z2String = "0.0"
     
     
     
     // Setup the GUI to monitor the data from the Monte Carlo Integral Calculator
-    @ObservedObject var monteCarlo = MonteCarloWaves(withData: true, xCenter1: <#T##Double#>, yCenter1: <#T##Double#>, zCenter1: <#T##Double#>, type1: <#T##String#>, xCenter2: <#T##Double#>, yCenter2: <#T##Double#>, zCenter2: <#T##Double#>, type2: <#T##String#>)
+    @State var monteCarlo = MonteCarloWaves()
     
     //Setup the GUI View
     var body: some View {
         HStack{
             
             VStack{
-                
+                VStack{
+                    HStack{
+                        VStack(alignment: .center) {
+                            Text("X coordinate of 1st orbital:")
+                                .font(.callout)
+                                .bold()
+                            TextField("x", text: $x1String)
+                                .padding()
+                        }
+                        .padding(.top, 5.0)
+                        
+                        VStack(alignment: .center) {
+                            Text("X coordinate of 2nd orbital")
+                                .font(.callout)
+                                .bold()
+                            TextField("z", text: $x2String)
+                                .padding()
+                        }
+                        .padding(.top, 5.0)
+                    }
+                    
+                    HStack{
+                        VStack(alignment: .center) {
+                            Text("Y coordinate of 1st orbital")
+                                .font(.callout)
+                                .bold()
+                            TextField("y", text: $y1String)
+                                .padding()
+                        }
+                        .padding(.top, 5.0)
+                        
+                        VStack(alignment: .center) {
+                            Text("Y coordinate of 2nd orbital")
+                                .font(.callout)
+                                .bold()
+                            TextField("y", text: $y2String)
+                                .padding()
+                        }
+                        .padding(.top, 5.0)
+                        
+                    }
+                    
+                    HStack{
+                        VStack(alignment: .center) {
+                            Text("Z coordinate of 1st orbital")
+                                .font(.callout)
+                                .bold()
+                            TextField("z", text: $z1String)
+                                .padding()
+                        }
+                        .padding(.top, 5.0)
+                        
+                        VStack(alignment: .center) {
+                            Text("Z coordinate of 2nd orbital")
+                                .font(.callout)
+                                .bold()
+                            TextField("z", text: $z2String)
+                                .padding()
+                        }
+                        .padding(.top, 5.0)
+                    }
+                    
+                }
                 VStack(alignment: .center) {
                     Text("Guesses")
                         .font(.callout)
@@ -39,6 +115,7 @@ struct ContentView: View {
                         .padding()
                 }
                 .padding(.top, 5.0)
+                
                 
                 VStack(alignment: .center) {
                     Text("Total Guesses")
@@ -56,13 +133,6 @@ struct ContentView: View {
                         .padding()
                 }
                 
-                VStack(alignment: .center) {
-                    Text("Calculated Integral")
-                        .font(.callout)
-                        .bold()
-                    TextField("# Guesses", text: $calcIntegralString)
-                        .padding()
-                }
                 
                 Button("Cycle Calculation", action: {Task.init{await self.calculatePi()}})
                     .padding()
@@ -96,8 +166,18 @@ struct ContentView: View {
     
     func calculatePi() async {
         
+        monteCarlo.orbital1xCenter = x1Value
+        monteCarlo.orbital2xCenter = y1Value
+        monteCarlo.orbital1yCenter = z1Value
+        monteCarlo.orbital1Type = "s"
         
-        monteCarlo.setButtonEnable(state: false)
+        monteCarlo.orbital2xCenter = x2Value
+        monteCarlo.orbital2yCenter = y2Value
+        monteCarlo.orbital2zCenter = z2Value
+        monteCarlo.orbital2Type = "s"
+        
+        
+        await monteCarlo.setButtonEnable(state: false)
         
         monteCarlo.guesses = Int(guessString)!
         monteCarlo.xRange = radius
@@ -109,7 +189,7 @@ struct ContentView: View {
         
         integralString =  monteCarlo.integralString
         
-        monteCarlo.setButtonEnable(state: true)
+        await monteCarlo.setButtonEnable(state: true)
         
     }
     
@@ -120,8 +200,8 @@ struct ContentView: View {
         integralString =  ""
         monteCarlo.totalGuesses = 0
         monteCarlo.totalIntegral = 0.0
-        monteCarlo.insideData = []
-        monteCarlo.outsideData = []
+        //monteCarlo.insideData = []
+        //monteCarlo.outsideData = []
         monteCarlo.firstTimeThroughLoop = true
         
         
@@ -135,3 +215,4 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
  
+//monteCarlo = MonteCarloWaves(withData: true, xCenter1: x1Value, yCenter1: y1Value, zCenter1: z1Value, type1: "s", xCenter2: x2Value, yCenter2: y2Value, zCenter2: z2Value, type2: "s")

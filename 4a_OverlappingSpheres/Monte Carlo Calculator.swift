@@ -13,15 +13,25 @@ import Foundation
 import Foundation
 import SwiftUI
 
-class MonteCarloWaves: NSObject, ObservableObject {
+@Observable class MonteCarloWaves {
     
-    @MainActor @Published var psi1Data = [(xPoint: Double, yPoint: Double, zPoint: Double)]()
-    @MainActor @Published var psi2Data = [(xPoint: Double, yPoint: Double, zPoint: Double)]()
-    @Published var totalGuessesString = ""
-    @Published var guessesString = ""
-    @Published var integralString = ""
-    @Published var enableButton = true
-    @Published var calcIntegralString = ""
+    @MainActor var psi1Data = [(xPoint: Double, yPoint: Double, zPoint: Double)]()
+    @MainActor var psi2Data = [(xPoint: Double, yPoint: Double, zPoint: Double)]()
+    var totalGuessesString = ""
+    var guessesString = ""
+    var integralString = ""
+    var enableButton = true
+    var calcIntegralString = ""
+    
+    var orbital1Type = ""
+    var orbital2Type = ""
+    
+    var orbital1xCenter = 0.0
+    var orbital2xCenter = 0.0
+    var orbital1yCenter = 0.0
+    var orbital2yCenter = 0.0
+    var orbital1zCenter = 0.0
+    var orbital2zCenter = 0.0
     
     var calcIntegral = 0.0
     var integral = 0.0
@@ -37,16 +47,15 @@ class MonteCarloWaves: NSObject, ObservableObject {
     //var psi2px = 0.0
     //var sum1s2px = 0.0
     
-    @MainActor init(withData data: Bool) {
-        super.init()
-        
-        psi1Data = []
-        psi2Data = []
-        
-        
-        
-    }
-
+//    @MainActor init(withData data: Bool) {
+//        
+//        psi1Data = []
+//        psi2Data = []
+//        
+//        
+//        
+//    }
+    
     func orbital1s(a: Double, r: Double) async -> Double {
         
         let psi1s = (1/sqrt(Double.pi)) * pow(1/a, Double(3/2)) * exp(-r/a)
@@ -57,7 +66,7 @@ class MonteCarloWaves: NSObject, ObservableObject {
         
         let psi2px = (1/sqrt(32*Double.pi)) * pow(1/a, Double(5/2)) * r * exp(-r/(2*a)) * sin(theta) * cos(phi)
         return psi2px
-     }
+    }
     
     //x, y, and z are given wrt 0,0,0
     // offsets are x, y, and z wrt 0,0,0; these will be treated as origin
@@ -112,10 +121,10 @@ class MonteCarloWaves: NSObject, ObservableObject {
         
         //piString = "\(pi)"
         
-       
+        
         
     }
-
+    
     /// calculates the Monte Carlo Integral of a Circle
     ///
     /// - Parameters:
@@ -125,10 +134,9 @@ class MonteCarloWaves: NSObject, ObservableObject {
     func calculateMonteCarloIntegral(domain: Double, maxGuesses: Double) async -> Double {
         
         var numberOfGuesses = 0.0
-        var overlappingPoints = 0.0
+        //var overlappingPoints = 0.0
         var integral = 0.0
         var point = (xPoint: 0.0, yPoint: 0.0, zPoint: 0.0)
-        var psi1Value = 0.0
         
         //var newOverlappingPoints : [(xPoint: Double, yPoint: Double, zPoint: Double)] = []
         //var newNonOverlappingPoints : [(xPoint: Double, yPoint: Double, zPoint: Double)] = []
@@ -144,17 +152,19 @@ class MonteCarloWaves: NSObject, ObservableObject {
             point.yPoint = Double.random(in: -domain...domain)
             point.zPoint = Double.random(in: -domain...domain)
             
-            var spherePoint = await cartesianToSpherical(x: point.xPoint, y: point.yPoint, z: point.zPoint, xOffSet: 0, yOffSet: 0, zOffSet: 0)
+            var sphereCord_wrt_Orbital1 = await cartesianToSpherical(x: point.xPoint, y: point.yPoint, z: point.zPoint, xOffSet: orbital1xCenter, yOffSet: orbital1yCenter, zOffSet: orbital1zCenter)
             
-            let psi1s = await orbital1s(a: 1.0, r: spherePoint.r)
+            var sphereCord_wrt_Orbital2 = await cartesianToSpherical(x: point.xPoint, y: point.yPoint, z: point.zPoint, xOffSet: orbital2xCenter, yOffSet: orbital2yCenter, zOffSet: orbital2zCenter)
+            
+            let psi1s = await orbital1s(a: 1.0, r: sphereCord_wrt_Orbital1.r)
             let psi2px = await orbital2px(a: 1.0, r: spherePoint.r, theta: spherePoint.theta, phi: spherePoint.phi)
             
             psiSum = psiSum + psi1s*psi2px
             
             numberOfGuesses += 1.0
             
-            }
-
+        }
+        
         
         integral = psiSum
         
@@ -162,29 +172,29 @@ class MonteCarloWaves: NSObject, ObservableObject {
         //Don't attempt to draw more than 250,000 points to keep the display updating speed reasonable.
         
         /*if ((totalGuesses < 500001) || (firstTimeThroughLoop)){
-        
-//            insideData.append(contentsOf: newInsidePoints)
-//            outsideData.append(contentsOf: newOutsidePoints)
-            
-            var plotInsidePoints = newOverlappingPoints
-            var plotOutsidePoints = newNonOverlappingPoints
-            
-            if (newOverlappingPoints.count > 750001) {
-                
-                plotInsidePoints.removeSubrange(750001..<newOverlappingPoints.count)
-            }
-            
-            if (newNonOverlappingPoints.count > 750001){
-                plotOutsidePoints.removeSubrange(750001..<newNonOverlappingPoints.count)
-                
-            }
-            
-            await updateData(insidePoints: plotInsidePoints, outsidePoints: plotOutsidePoints)
-            firstTimeThroughLoop = false
-        }*/
+         
+         //            insideData.append(contentsOf: newInsidePoints)
+         //            outsideData.append(contentsOf: newOutsidePoints)
+         
+         var plotInsidePoints = newOverlappingPoints
+         var plotOutsidePoints = newNonOverlappingPoints
+         
+         if (newOverlappingPoints.count > 750001) {
+         
+         plotInsidePoints.removeSubrange(750001..<newOverlappingPoints.count)
+         }
+         
+         if (newNonOverlappingPoints.count > 750001){
+         plotOutsidePoints.removeSubrange(750001..<newNonOverlappingPoints.count)
+         
+         }
+         
+         await updateData(insidePoints: plotInsidePoints, outsidePoints: plotOutsidePoints)
+         firstTimeThroughLoop = false
+         }*/
         
         return integral
-        }
+    }
     
     
     /// updateData
@@ -193,10 +203,10 @@ class MonteCarloWaves: NSObject, ObservableObject {
     ///   - insidePoints: points inside the circle of the given radius
     ///   - outsidePoints: points outside the circle of the given radius
     /*@MainActor func updateData(insidePoints: [(xPoint: Double, yPoint: Double)] , outsidePoints: [(xPoint: Double, yPoint: Double)]){
-        
-        insideData.append(contentsOf: insidePoints)
-        outsideData.append(contentsOf: outsidePoints)
-    */}
+     
+     insideData.append(contentsOf: insidePoints)
+     outsideData.append(contentsOf: outsidePoints)
+     */
     
     /// updateTotalGuessesString
     /// The function runs on the main thread so it can update the GUI
@@ -234,7 +244,7 @@ class MonteCarloWaves: NSObject, ObservableObject {
             }
             
             
-                
+            
         }
         else{
             
@@ -245,9 +255,9 @@ class MonteCarloWaves: NSObject, ObservableObject {
                     enableButton = false
                 }
             }
-                
+            
         }
         
     }
-
+    
 }
