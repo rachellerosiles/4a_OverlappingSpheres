@@ -21,10 +21,6 @@ import SwiftUI
     var guessesString = ""
     var integralString = ""
     var enableButton = true
-    var calcIntegralString = ""
-    
-    var orbital1Type = ""
-    var orbital2Type = ""
     
     var orbital1xCenter = 0.0
     var orbital2xCenter = 0.0
@@ -33,7 +29,6 @@ import SwiftUI
     var orbital1zCenter = 0.0
     var orbital2zCenter = 0.0
     
-    var calcIntegral = 0.0
     var integral = 0.0
     var guesses = 1
     var totalGuesses = 0
@@ -42,6 +37,8 @@ import SwiftUI
     var yRange = 1.0
     var zRange = 1.0
     var firstTimeThroughLoop = true
+    
+    var bohrRadius = 0.529177210903
     
     //var psi1s = 0.0
     //var psi2px = 0.0
@@ -96,17 +93,13 @@ import SwiftUI
     ///
     func calculateIntegral() async {
         
-        
         var maxGuesses = 0.0
         let boundingBoxCalculator = BoundingBox() ///Instantiates Class needed to calculate the area of the bounding box.
-        
         
         maxGuesses = Double(guesses)
         
         let newValue = await calculateMonteCarloIntegral(domain: xRange, maxGuesses: maxGuesses)
-        
         totalIntegral = totalIntegral + newValue
-        
         totalGuesses = totalGuesses + guesses
         
         await updateTotalGuessesString(text: "\(totalGuesses)")
@@ -115,7 +108,7 @@ import SwiftUI
         
         ///Calculates the value of π from the area of a unit circle
         
-        integral = totalIntegral/Double(totalGuesses) * boundingBoxCalculator.calculateVolume(lengthOfSide1: 2*xRange, lengthOfSide2: 2*yRange, lengthOfSide3: 2*zRange)
+        integral = integral * boundingBoxCalculator.calculateVolume(lengthOfSide1: 2*xRange, lengthOfSide2: 2*yRange, lengthOfSide3: 2*zRange)
         
         await updatePiString(text: "\(integral)")
         
@@ -125,17 +118,18 @@ import SwiftUI
         
     }
     
-    /// calculates the Monte Carlo Integral of a Circle
+    /// calculates the Monte Carlo Integral of a the overlap of two orbitals
     ///
     /// - Parameters:
-    ///   - radius: radius of circle
+    ///   - domain: half the side length of the bounding box
     ///   - maxGuesses: number of guesses to use in the calculaton
-    /// - Returns: ratio of points inside to total guesses. Must mulitply by area of box in calling function
+    /// - Returns: ratio of the sum of all (value of first wavefunction) x (value of second wavefunction) / maxGuesses
+    /// must multiply return value by the box volume
     func calculateMonteCarloIntegral(domain: Double, maxGuesses: Double) async -> Double {
         
         var numberOfGuesses = 0.0
         //var overlappingPoints = 0.0
-        var integral = 0.0
+        //var integral = 0.0
         var point = (xPoint: 0.0, yPoint: 0.0, zPoint: 0.0)
         
         //var newOverlappingPoints : [(xPoint: Double, yPoint: Double, zPoint: Double)] = []
@@ -156,17 +150,19 @@ import SwiftUI
             
             var sphereCord_wrt_Orbital2 = await cartesianToSpherical(x: point.xPoint, y: point.yPoint, z: point.zPoint, xOffSet: orbital2xCenter, yOffSet: orbital2yCenter, zOffSet: orbital2zCenter)
             
-            let psi1s = await orbital1s(a: 1.0, r: sphereCord_wrt_Orbital1.r)
-            let psi2px = await orbital2px(a: 1.0, r: spherePoint.r, theta: spherePoint.theta, phi: spherePoint.phi)
+            let psi1 = await orbital1s(a: bohrRadius, r: sphereCord_wrt_Orbital1.r)
+            //let psi2px = await orbital2px(a: 1.0, r: sphereCord_wrt_Orbital2.r, theta: sphereCord_wrt_Orbital2.theta, phi: sphereCord_wrt_Orbital2.theta)
             
-            psiSum = psiSum + psi1s*psi2px
+            let psi2 = await orbital1s(a: bohrRadius, r: sphereCord_wrt_Orbital2.r)
+            
+            psiSum = psiSum + psi1*psi2
             
             numberOfGuesses += 1.0
             
         }
         
         
-        integral = psiSum
+        integral = psiSum/maxGuesses
         
         //Append the points to the arrays needed for the displays
         //Don't attempt to draw more than 250,000 points to keep the display updating speed reasonable.
@@ -231,33 +227,19 @@ import SwiftUI
     /// Toggles the state of the Enable Button on the Main Thread
     /// - Parameter state: Boolean describing whether the button should be enabled.
     @MainActor func setButtonEnable(state: Bool){
-        
-        
         if state {
-            
             Task.init {
                 await MainActor.run {
-                    
-                    
                     enableButton = true
                 }
             }
-            
-            
-            
         }
         else{
-            
             Task.init {
                 await MainActor.run {
-                    
-                    
                     enableButton = false
                 }
             }
-            
         }
-        
     }
-    
 }

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var integralE = 0.0
+    //@State var integralE = 0.0
     @State var totalGuesses = 0.0
     @State var totalIntegral = 0.0
     @State var calcIntegral = 0.0
@@ -134,7 +134,7 @@ struct ContentView: View {
                 }
                 
                 
-                Button("Cycle Calculation", action: {Task.init{await self.calculatePi()}})
+                Button("Cycle Calculation", action: {Task.init{await self.calculateIntegral()}})
                     .padding()
                     .disabled(monteCarlo.enableButton == false)
                 
@@ -164,17 +164,15 @@ struct ContentView: View {
         }
     }
     
-    func calculatePi() async {
+    func calculateIntegral() async {
         
         monteCarlo.orbital1xCenter = x1Value
         monteCarlo.orbital2xCenter = y1Value
         monteCarlo.orbital1yCenter = z1Value
-        monteCarlo.orbital1Type = "s"
         
         monteCarlo.orbital2xCenter = x2Value
         monteCarlo.orbital2yCenter = y2Value
         monteCarlo.orbital2zCenter = z2Value
-        monteCarlo.orbital2Type = "s"
         
         
         await monteCarlo.setButtonEnable(state: false)
@@ -186,7 +184,6 @@ struct ContentView: View {
         await monteCarlo.calculateIntegral()
         
         totalGuessString = monteCarlo.totalGuessesString
-        
         integralString =  monteCarlo.integralString
         
         await monteCarlo.setButtonEnable(state: true)
