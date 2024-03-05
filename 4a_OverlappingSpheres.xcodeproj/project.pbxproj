@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		63A5A9CC2B89073700990010 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A5A9CB2B89073700990010 /* BoundingBox.swift */; };
+		AC2BDF482B968A9B0009283E /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A5A9CB2B89073700990010 /* BoundingBox.swift */; };
+		AC2BDF492B968A9B0009283E /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A5A9CB2B89073700990010 /* BoundingBox.swift */; };
 		AC431D582B801A1B00614D86 /* _a_OverlappingSpheresApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC431D572B801A1B00614D86 /* _a_OverlappingSpheresApp.swift */; };
 		AC431D5A2B801A1B00614D86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC431D592B801A1B00614D86 /* ContentView.swift */; };
 		AC431D5C2B801A1C00614D86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC431D5B2B801A1C00614D86 /* Assets.xcassets */; };
@@ -282,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC2BDF482B968A9B0009283E /* BoundingBox.swift in Sources */,
 				AC431D6A2B801A1C00614D86 /* _a_OverlappingSpheresTests.swift in Sources */,
 				AC91B9A02B8418C900923AE8 /* Monte Carlo Calculator.swift in Sources */,
 			);
@@ -294,6 +297,7 @@
 				AC431D742B801A1C00614D86 /* _a_OverlappingSpheresUITests.swift in Sources */,
 				AC91B9A12B8418C900923AE8 /* Monte Carlo Calculator.swift in Sources */,
 				AC431D762B801A1C00614D86 /* _a_OverlappingSpheresUITestsLaunchTests.swift in Sources */,
+				AC2BDF492B968A9B0009283E /* BoundingBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

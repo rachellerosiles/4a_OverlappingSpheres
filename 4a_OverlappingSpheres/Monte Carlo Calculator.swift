@@ -15,8 +15,8 @@ import SwiftUI
 
 @Observable class MonteCarloWaves {
     
-    @MainActor var psi1Data = [(xPoint: Double, yPoint: Double, zPoint: Double)]()
-    @MainActor var psi2Data = [(xPoint: Double, yPoint: Double, zPoint: Double)]()
+    var psi1Data = [(xPoint: Double, yPoint: Double, zPoint: Double)]()
+    var psi2Data = [(xPoint: Double, yPoint: Double, zPoint: Double)]()
     var totalGuessesString = ""
     var guessesString = ""
     var integralString = ""
@@ -33,9 +33,13 @@ import SwiftUI
     var guesses = 1
     var totalGuesses = 0
     var totalIntegral = 0.0
-    var xRange = 1.0
-    var yRange = 1.0
-    var zRange = 1.0
+    var xLimitPos = 10.0
+    var xLimitNeg = -10.0
+    var yLimitPos = 0.0
+    var yLimitNeg = 0.0
+    var zLimitPos = 0.0
+    var zLimitNeg = 0.0
+    
     var firstTimeThroughLoop = true
     
     var bohrRadius = 0.529177210903
@@ -53,15 +57,15 @@ import SwiftUI
 //        
 //    }
     
-    func orbital1s(a: Double, r: Double) async -> Double {
+    func orbital1s(a: Double, r: Double) -> Double {
         
-        let psi1s = (1/sqrt(Double.pi)) * pow(1/a, Double(3/2)) * exp(-r/a)
+        let psi1s = (1/sqrt(Double.pi)) * pow(1/a, Double(3.0/2.0)) * exp(-r/a)
         return psi1s
     }
     
-    func orbital2px(a: Double, r: Double, theta: Double, phi: Double) async -> Double {
+    func orbital2px(a: Double, r: Double, theta: Double, phi: Double) -> Double {
         
-        let psi2px = (1/sqrt(32*Double.pi)) * pow(1/a, Double(5/2)) * r * exp(-r/(2*a)) * sin(theta) * cos(phi)
+        let psi2px = (1/sqrt(32*Double.pi)) * pow(1/a, Double(5.0/2.0)) * r * exp(-r/(2*a)) * sin(theta) * cos(phi)
         return psi2px
     }
     
@@ -75,7 +79,7 @@ import SwiftUI
     ///   - yOffSet: y coordinate of the sphere center wrt origin
     ///   - zOffSet: y coordinate of the sphere center wrt origin
     /// - Returns: spherical coordinates wrt the x,y,z offset
-    func cartesianToSpherical(x: Double, y: Double, z: Double, xOffSet: Double, yOffSet: Double, zOffSet: Double) async -> (r: Double, theta: Double, phi: Double){
+    func cartesianToSpherical(x: Double, y: Double, z: Double, xOffSet: Double, yOffSet: Double, zOffSet: Double)  -> (r: Double, theta: Double, phi: Double){
         
         let newY = y - yOffSet
         let newX = x - xOffSet
@@ -91,26 +95,28 @@ import SwiftUI
     }
     
     ///
-    func calculateIntegral() async {
+    func calculateIntegral() {
         
         var maxGuesses = 0.0
         let boundingBoxCalculator = BoundingBox() ///Instantiates Class needed to calculate the area of the bounding box.
         
         maxGuesses = Double(guesses)
         
-        let newValue = await calculateMonteCarloIntegral(domain: xRange, maxGuesses: maxGuesses)
+        let newValue = calculateMonteCarloIntegral(domain: (xMin: xLimitNeg, xMax: xLimitPos, yMin: yLimitNeg, yMax: yLimitPos, zMin: zLimitNeg, zMax: zLimitPos), maxGuesses: maxGuesses)
         totalIntegral = totalIntegral + newValue
         totalGuesses = totalGuesses + guesses
         
-        await updateTotalGuessesString(text: "\(totalGuesses)")
+        updateTotalGuessesString(text: "\(totalGuesses)")
         
         //totalGuessesString = "\(totalGuesses)"
         
         ///Calculates the value of π from the area of a unit circle
         
-        integral = integral * boundingBoxCalculator.calculateVolume(lengthOfSide1: 2*xRange, lengthOfSide2: 2*yRange, lengthOfSide3: 2*zRange)
+        let volumeOfBoundingBox = boundingBoxCalculator.calculateVolume(lengthOfSide1: (xLimitPos-xLimitNeg), lengthOfSide2: (yLimitPos-yLimitNeg), lengthOfSide3: (zLimitPos-zLimitNeg))
         
-        await updatePiString(text: "\(integral)")
+        integral = totalIntegral * volumeOfBoundingBox/Double(totalGuesses)
+        
+        updatePiString(text: "\(integral)")
         
         //piString = "\(pi)"
         
@@ -125,7 +131,7 @@ import SwiftUI
     ///   - maxGuesses: number of guesses to use in the calculaton
     /// - Returns: ratio of the sum of all (value of first wavefunction) x (value of second wavefunction) / maxGuesses
     /// must multiply return value by the box volume
-    func calculateMonteCarloIntegral(domain: Double, maxGuesses: Double) async -> Double {
+    func calculateMonteCarloIntegral(domain: (xMin: Double, xMax: Double, yMin: Double, yMax: Double, zMin: Double, zMax: Double), maxGuesses: Double) -> Double {
         
         var numberOfGuesses = 0.0
         //var overlappingPoints = 0.0
@@ -142,18 +148,18 @@ import SwiftUI
             /* Calculate 2 random values within the box */
             /* Determine psi 1 and psi 2 */
             /* multipy psi1 and psi2 and add to the sum */
-            point.xPoint = Double.random(in: -domain...domain)
-            point.yPoint = Double.random(in: -domain...domain)
-            point.zPoint = Double.random(in: -domain...domain)
+            point.xPoint = Double.random(in: domain.xMin...domain.xMax)
+            point.yPoint = Double.random(in: domain.yMin...domain.yMax)
+            point.zPoint = Double.random(in: domain.zMin...domain.zMax)
             
-            var sphereCord_wrt_Orbital1 = await cartesianToSpherical(x: point.xPoint, y: point.yPoint, z: point.zPoint, xOffSet: orbital1xCenter, yOffSet: orbital1yCenter, zOffSet: orbital1zCenter)
+            var sphereCord_wrt_Orbital1 = cartesianToSpherical(x: point.xPoint, y: point.yPoint, z: point.zPoint, xOffSet: orbital1xCenter, yOffSet: orbital1yCenter, zOffSet: orbital1zCenter)
             
-            var sphereCord_wrt_Orbital2 = await cartesianToSpherical(x: point.xPoint, y: point.yPoint, z: point.zPoint, xOffSet: orbital2xCenter, yOffSet: orbital2yCenter, zOffSet: orbital2zCenter)
+            var sphereCord_wrt_Orbital2 = cartesianToSpherical(x: point.xPoint, y: point.yPoint, z: point.zPoint, xOffSet: orbital2xCenter, yOffSet: orbital2yCenter, zOffSet: orbital2zCenter)
             
-            let psi1 = await orbital1s(a: bohrRadius, r: sphereCord_wrt_Orbital1.r)
-            //let psi2px = await orbital2px(a: 1.0, r: sphereCord_wrt_Orbital2.r, theta: sphereCord_wrt_Orbital2.theta, phi: sphereCord_wrt_Orbital2.theta)
+            let psi1 = orbital1s(a: bohrRadius, r: sphereCord_wrt_Orbital1.r)
+            //let psi2px = orbital2px(a: 1.0, r: sphereCord_wrt_Orbital2.r, theta: sphereCord_wrt_Orbital2.theta, phi: sphereCord_wrt_Orbital2.theta)
             
-            let psi2 = await orbital1s(a: bohrRadius, r: sphereCord_wrt_Orbital2.r)
+            let psi2 = orbital1s(a: bohrRadius, r: sphereCord_wrt_Orbital2.r)
             
             psiSum = psiSum + psi1*psi2
             
@@ -162,8 +168,8 @@ import SwiftUI
         }
         
         
-        integral = psiSum/maxGuesses
-        
+        //integral = psiSum/maxGuesses
+        integral = psiSum
         //Append the points to the arrays needed for the displays
         //Don't attempt to draw more than 250,000 points to keep the display updating speed reasonable.
         
@@ -185,11 +191,11 @@ import SwiftUI
          
          }
          
-         await updateData(insidePoints: plotInsidePoints, outsidePoints: plotOutsidePoints)
+         updateData(insidePoints: plotInsidePoints, outsidePoints: plotOutsidePoints)
          firstTimeThroughLoop = false
          }*/
         
-        return integral
+        return psiSum
     }
     
     
@@ -207,7 +213,7 @@ import SwiftUI
     /// updateTotalGuessesString
     /// The function runs on the main thread so it can update the GUI
     /// - Parameter text: contains the string containing the number of total guesses
-    @MainActor func updateTotalGuessesString(text:String){
+    func updateTotalGuessesString(text:String){
         
         totalGuessesString = text
         
@@ -216,7 +222,7 @@ import SwiftUI
     /// updatePiString
     /// The function runs on the main thread so it can update the GUI
     /// - Parameter text: contains the string containing the current value of Pi
-    @MainActor func updatePiString(text:String){
+   func updatePiString(text:String){
         
         integralString = text
         
@@ -226,18 +232,18 @@ import SwiftUI
     /// setButton Enable
     /// Toggles the state of the Enable Button on the Main Thread
     /// - Parameter state: Boolean describing whether the button should be enabled.
-    @MainActor func setButtonEnable(state: Bool){
+    func setButtonEnable(state: Bool){
         if state {
             Task.init {
-                await MainActor.run {
-                    enableButton = true
+                 {
+                     self.enableButton = true
                 }
             }
         }
         else{
             Task.init {
-                await MainActor.run {
-                    enableButton = false
+                 {
+                     self.enableButton = false
                 }
             }
         }
